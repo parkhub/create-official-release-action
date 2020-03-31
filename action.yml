@@ -1,0 +1,6 @@
+name: 'Create Official Release and Tag'
+description: Creates an official release and tag for the application.
+author: Logan Fisher
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
