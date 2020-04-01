@@ -1,8 +1,10 @@
 FROM mhart/alpine-node
 LABEL maintainer Logan Fisher "logan.fisher@parkhub.com"
 
-COPY . ./
+RUN apk add --update git
+
+COPY run.sh .release-it.json ./
 
 RUN npm install --global release-it
 
-CMD ["sh", "/run.sh", "$RELEASE_TYPE"]
+ENTRYPOINT ["sh", "/run.sh"]
