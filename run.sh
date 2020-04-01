@@ -24,6 +24,9 @@ git fetch
 git checkout origin/master
 git checkout -b master
 
+echo "Exporting token for use with release-it"
+export GITHUB_TOKEN="${TOKEN}"
+
 echo "Running release-it"
 # $1 is the release type major, minor or patch
 DEBUG=release-it:* release-it --ci --no-npm
