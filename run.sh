@@ -31,22 +31,3 @@ export GITHUB_TOKEN="${TOKEN}"
 echo "Running release-it"
 # $1 is the release type major, minor or patch
 DEBUG=release-it:* release-it --ci --no-npm
-
-echo "Updating develop from master after release..."
-git fetch
-git checkout origin/develop
-git checkout -b PV-5000_merge-to-develop
-git pull origin master 
-git push -u origin MERGE-00_merge-to-develop
-hub pull-request -h PV-5000_merge-to-develop
-
-pr() {
-  git push -u origin MERGE-00_merge-to-develop
-  hub pull-request -h MERGE-00_merge-to-develop -F -
-}
-
-pr MERGE-00_merge-to-develop <<MSG
-Auto Merge from master after release.
-
-This branch should be merged in after a release.
-MSG
