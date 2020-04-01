@@ -1,6 +1,6 @@
 {
   "git": {
-    "changelog": "git log --pretty=format:\"* %s (%h)\" develop...HEAD",
+    "changelog": "git log --pretty=format:\"* %s (%h)\" ${latestTag}...HEAD",
     "requireCleanWorkingDir": false,
     "requireBranch": false,
     "requireUpstream": false,
