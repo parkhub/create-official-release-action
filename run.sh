@@ -6,6 +6,7 @@ echo "USERNAME: ${USERNAME}"
 echo "TOKEN: ${TOKEN}"
 
 echo "Configuring git"
+git config --global hub.protocol "https"
 git config --global url."https://${USERNAME}:${TOKEN}@github.com".insteadOf "https://github.com"
 git config --global user.email "devops@parkhub.com"
 git config --global user.name "codefresh-parkhub"
