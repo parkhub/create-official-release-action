@@ -22,8 +22,8 @@ git remote add origin https://github.com/${REPO}.git
 
 echo "Checking out Master branch"
 git fetch
-git checkout origin/master
-git checkout -b master
+git checkout origin/production
+git checkout -b production
 
 echo "Exporting token for use with release-it"
 export GITHUB_TOKEN="${TOKEN}"
