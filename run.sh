@@ -21,10 +21,7 @@ echo "Adding remote for repo ${REPO}"
 git remote add origin https://github.com/${REPO}.git
 
 branch=${GITHUB_REF#refs/heads/}
-echo $GITHUB_REF
-echo ${GITHUB_REF#refs/heads/}
-echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-echo "Checking out ${GITHUB_REF#refs/heads/} branch"
+echo "Checking out $branch branch"
 git fetch
 git checkout origin/$branch
 git checkout -b $branch
