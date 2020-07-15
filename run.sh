@@ -23,12 +23,11 @@ git remote add origin https://github.com/${REPO}.git
 branch = ${GITHUB_REF#refs/heads/}
 echo $GITHUB_REF
 echo ${GITHUB_REF#refs/heads/}
-echo "$(echo ${GITHUB_REF#refs/heads/})"
 echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-echo "Checking out $branch branch"
+echo "Checking out $(branch) branch"
 git fetch
-git checkout origin/$branch
-git checkout -b $branch
+git checkout origin/$(branch)
+git checkout -b $(branch)
 
 echo "Exporting token for use with release-it"
 export GITHUB_TOKEN="${TOKEN}"
