@@ -10,12 +10,13 @@ git config --global hub.protocol "https"
 git config --global url."https://${USERNAME}:${TOKEN}@github.com".insteadOf "https://github.com"
 git config --global user.email "devops@parkhub.com"
 git config --global user.name "codefresh-parkhub"
+git config --global --add safe.directory /github/workspace
 
 echo "Initialize GIT"
 git init
 
 echo "Cloning repo ${REPO}"
-git clone https://github.com/${REPO}.git 
+git clone https://github.com/${REPO}.git
 
 echo "Adding remote for repo ${REPO}"
 git remote add origin https://github.com/${REPO}.git
